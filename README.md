@@ -4,7 +4,7 @@ A comprehensive collection of Python-based statistical analysis tools designed f
 
 ## Overview
 
-This repository contains statistical computation and validation tools that I use in my freelance work as a **Statistical Assistant**. These tools help streamline the process of checking, computing, and validating statistical data for various research and analysis projects.
+This repository contains statistical computation and validation tools that I use in my freelance work as a **Statistical Assistant**. These tools help streamline the process of checking, computing, and validating statistical data for various research and theses.
 
 ## Purpose
 
