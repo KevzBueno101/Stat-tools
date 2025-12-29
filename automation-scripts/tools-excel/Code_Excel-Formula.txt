@@ -1,0 +1,72 @@
+=IF(ROW()<=X,4,IF(ROW()<=X+Y,3,2))
+=IF(ROW()<=5,4,
+   IF(ROW()<=10,3,
+      IF(ROW()<=70,2,1)))
+
+=IF(ROW()<=cum1, 4, IF(ROW()<=cum2, 3, IF(ROW()<=cum3, 2, 1))) ||
+=IF(ROW()<=2, 4, IF(ROW()<=(2+35), 3, IF(ROW()<=((2+35)+70), 2, 1)))
+
+
+//Where cum1, cum2, cum3 are cumulative counts of respondents:
+
+cum1 = 39 → first 39 rows will be 4
+
+cum2 = 39 + 53 = 92 → next rows (40–92) will be 3
+
+cum3 = 92 + 60 = 152 → next rows (93–152) will be 2
+
+remaining rows (153–156) will be 1
+
+So the formula becomes:
+
+=IF(ROW()<=39,4,IF(ROW()<=92,3,IF(ROW()<=152,2,1)))
+
+//1. ROW()
+
+Ang ROW() ay isang Excel function na nagbabalik ng numero ng row ng cell kung saan nakalagay ang formula.
+
+Halimbawa:
+
+Kung nasa cell A1, ROW() = 1
+
+Kung nasa cell A50, ROW() = 50
+
+2. IF(logical_test, value_if_true, value_if_false)
+
+Syntax:
+
+IF(condition, value_if_true, value_if_false)
+
+
+Pinipili ng IF kung aling value ang ilalagay depende sa condition.
+
+3. Breakdown ng formula
+IF(ROW() <= 66, 4, IF(ROW() <= 138, 3, 2))
+
+Step 1: ROW() <= 66
+
+Kung ang current row number ay 66 o mas mababa, ilalagay ang 4 sa cell.
+
+Kung hindi (row > 66), pumunta sa susunod na IF.
+
+Step 2: IF(ROW() <= 138, 3, 2)
+
+Kung ang row number ay mas mababa o equal sa 138, ilalagay ang 3.
+
+Kung higit sa 138, ilalagay ang 2.
+
+4. Sa madaling salita
+
+Rows 1 → 66: value = 4
+
+Rows 67 → 138: value = 3
+
+Rows 139 → onwards: value = 2
+
+5. Paano gamitin
+
+Ilagay sa first cell ng column mo (halimbawa A1).
+
+Drag down hanggang sa row 139 (o kung gaano karaming rows meron ka).
+
+Lalabas ang tamang values depende sa row number.
